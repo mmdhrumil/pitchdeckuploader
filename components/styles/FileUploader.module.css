@@ -1,0 +1,13 @@
+.container{
+    background-color: #D7D7D7;
+    color: #696969;
+    font-size: max(3vh, 20px);
+    height: max(12vh, 120px);
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    text-align: center;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    border: 2px #696969 dashed;
+}
+
