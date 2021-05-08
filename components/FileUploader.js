@@ -40,10 +40,13 @@ async function uploadData(acceptedFiles){
 }
 
 async function uploadFiles() {
-    console.log("sending: " + fileObject)
-    await uploadData(fileObject)
-
-    console.log("Dunzo")
+    if (fileObject !== null) {
+        await uploadData(fileObject)
+        fileObject = null;
+    }
+    else {
+        console.log("Please add files to upload.")
+    }
 }
 async function setFileObject(acceptedFiles) {
     fileObject = acceptedFiles;
