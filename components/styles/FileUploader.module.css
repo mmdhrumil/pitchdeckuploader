@@ -14,3 +14,23 @@
     margin-top: 3vh;
 
 }
+
+.buttonContainer{
+    text-align: center;
+    padding: 3vh;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.uploadButton {
+    margin: auto;
+    background-color: #465AEE;
+    color: white;
+    font-family: 'Oxygen';
+    border: none;
+    border-radius: 1vh;
+    height: max(6vh, 40px);
+    width: 10vw;
+    font-size: max(3vh, 20px);
+}
