@@ -1,12 +1,14 @@
 .container{
-    width: 100vw;
-    background-color: #465AEE;
-    color: white;
+    background-color: #262626;
+    color: #F3F3F3;
     font-family: 'Oxygen';
-    height: max(4.5vh, 45px);
+    height: max(4vh, 40px);
     text-align: center;
-    font-size: max(4vh, 30px);
+    font-size: max(3vh, 20px);
     padding: 1vh;
+    border-bottom: 0.1px solid rgba(255,255,255,0.1);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 
 .container p{

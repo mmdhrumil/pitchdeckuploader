@@ -1,6 +1,10 @@
 .dropperContainer{
-    background-color: #F0F0F0;
-    color: #696969;
+    background-color: #262626;
+    color: #F3F3F3;
+    box-shadow: 
+        #262626 0px 0px 2px 2px,
+        #000000 4px 4px 8px,
+        #4d4d4d -4px -4px 8px;
     width: 75vw;
     font-size: max(3vh, 20px);
     height: max(10vh, 100px);
@@ -8,12 +12,13 @@
     padding-bottom: 0.5vh;
     text-align: center;
     margin: 0 auto;
-    border: 2px #696969 dashed;
     font-family: 'Oxygen';
     border-radius: 4px;
     margin-top: 3vh;
-
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
+
 
 .buttonContainer{
     text-align: center;
@@ -25,12 +30,30 @@
 
 .uploadButton {
     margin: auto;
-    background-color: #465AEE;
-    color: white;
+    background-color: #262626;
+    box-shadow: 
+        #262626 0px 0px 2px 2px,
+        #4d4d4d -4px -4px 8px,
+        #000000 4px 4px 8px;
+    color: #F3F3F3;
     font-family: 'Oxygen';
     border: none;
     border-radius: 1vh;
     height: max(6vh, 40px);
     width: 10vw;
-    font-size: max(3vh, 20px);
+    font-size: max(2vh, 18px);
+    transition: 0.2s all;
+}
+
+.uploadButton:active{
+    margin: auto;
+    background-color: #262626;
+    color: #F3F3F3;
+    box-shadow: none;
+    font-family: 'Oxygen';
+    border: none;
+    border-radius: 1vh;
+    height: max(6vh, 40px);
+    width: 10vw;
+    font-size: max(2vh, 18px);
 }
