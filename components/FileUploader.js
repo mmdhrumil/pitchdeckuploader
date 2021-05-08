@@ -2,9 +2,26 @@ import React, { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { createClient } from '@supabase/supabase-js'
 import styles from './styles/FileUploader.module.css'
+import { useToasts } from 'react-toast-notifications'
 
 
 var fileObject = null;
+var toastObject = null;
+
+function showToast(type, msg) {
+    if(type === "success") {
+        toastObject(msg, {
+            appearance: 'success',
+            autoDismiss: true,
+          })
+    }
+    else if(type === "error") {
+        toastObject(msg, {
+            appearance: 'error',
+            autoDismiss: true,
+          })
+    }
+}
 
 async function connectSupabase(){
     const supabase = await createClient(process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
@@ -25,18 +42,15 @@ async function uploadData(acceptedFiles){
             const fileBlob = new Blob([binaryFile], { type: file.type})
             const { data, error } = await supabaseInstance.storage.from(process.env.NEXT_PUBLIC_SUPABASE_UPLOADED_FILES_BUCKET_NAME).upload('queue/' + filename, fileBlob)
             if(data){
-                console.log("File uploaded successfully.")
+                showToast("success", "Files uploaded successfully.")
             }
             else{
-                console.log("Error in uploading file/s.")
-                console.log(error)
+                showToast("error", "Error in uploading files.")
             }
         }
 
         fileReader.readAsArrayBuffer(file)
     })
-
-
 }
 
 async function uploadFiles() {
@@ -45,18 +59,22 @@ async function uploadFiles() {
         fileObject = null;
     }
     else {
-        console.log("Please add files to upload.")
+        showToast("error","Please add files to upload.")
     }
 }
+
 async function setFileObject(acceptedFiles) {
     fileObject = acceptedFiles;
 }
 
-function FileUploader() {
+const FileUploader = ({ Component, pageProps }) => {
+    const { addToast } = useToasts()
+    toastObject = addToast
 
     const onDrop = useCallback(acceptedFiles => {
         setFileObject(acceptedFiles)
     }, [])
+
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
 
@@ -71,7 +89,9 @@ function FileUploader() {
                 }
             </div>
             <div className={styles.buttonContainer}>
-                <button className={styles.uploadButton} onClick={uploadFiles}>Upload</button>
+                <button className={styles.uploadButton} onClick={uploadFiles}>
+                    Upload
+                </button>
             </div>
         </div>
     );
