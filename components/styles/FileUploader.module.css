@@ -1,13 +1,16 @@
-.container{
-    background-color: #D7D7D7;
+.dropperContainer{
+    background-color: #F0F0F0;
     color: #696969;
+    width: 75vw;
     font-size: max(3vh, 20px);
-    height: max(12vh, 120px);
+    height: max(10vh, 100px);
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
     text-align: center;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin: 0 auto;
     border: 2px #696969 dashed;
-}
+    font-family: 'Oxygen';
+    border-radius: 4px;
+    margin-top: 3vh;
 
+}

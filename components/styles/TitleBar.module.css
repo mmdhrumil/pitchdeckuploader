@@ -1,0 +1,14 @@
+.container{
+    width: 100vw;
+    background-color: #465AEE;
+    color: white;
+    font-family: 'Oxygen';
+    height: max(4.5vh, 45px);
+    text-align: center;
+    font-size: max(4vh, 30px);
+    padding: 1vh;
+}
+
+.container p{
+    all: none;
+}
