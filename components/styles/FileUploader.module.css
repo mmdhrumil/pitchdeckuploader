@@ -7,7 +7,7 @@
     background-color: #262626;
     color: #F3F3F3;
     box-shadow: 
-        #262626 0px 0px 2px 2px,
+        #262626 0px 0px 3px 3px,
         #000000 4px 4px 8px,
         #4d4d4d -4px -4px 8px;
     width: 75vw;
@@ -37,7 +37,7 @@
     margin: auto;
     background-color: #262626;
     box-shadow: 
-        #262626 0px 0px 2px 2px,
+        #262626 0px 0px 3px 3px,
         #4d4d4d -4px -4px 8px,
         #000000 4px 4px 8px;
     color: #F3F3F3;

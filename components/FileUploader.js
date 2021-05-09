@@ -4,7 +4,6 @@ import { createClient } from '@supabase/supabase-js'
 import styles from './styles/FileUploader.module.css'
 import { useToasts } from 'react-toast-notifications'
 
-
 var fileObject = null;
 var toastObject = null;
 
@@ -53,26 +52,30 @@ async function uploadData(acceptedFiles){
     })
 }
 
-async function uploadFiles() {
+async function uploadFiles(setDropboxText) {
     if (fileObject !== null) {
         await uploadData(fileObject)
         fileObject = null;
+        setDropboxText("Drag and drop your pitch deck here or click to select files.")
     }
     else {
         showToast("error","Please add files to upload.")
     }
 }
 
-async function setFileObject(acceptedFiles) {
+async function setFileObject(acceptedFiles, setDropboxText) {
     fileObject = acceptedFiles;
+    setDropboxText("Your file has been added.")
 }
 
 const FileUploader = ({ Component, pageProps }) => {
     const { addToast } = useToasts()
     toastObject = addToast
 
+    const [dropboxText, setDropboxText] = useState("Drag and drop your pitch deck here or click to select files.")
+
     const onDrop = useCallback(acceptedFiles => {
-        setFileObject(acceptedFiles)
+        setFileObject(acceptedFiles, setDropboxText)
     }, [])
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
@@ -85,11 +88,11 @@ const FileUploader = ({ Component, pageProps }) => {
                 {
                     isDragActive ?
                     <p>Drop your pitch deck here.</p> :
-                    <p>Drag and drop your pitch deck here or click to select files.</p>
+                    <p>{dropboxText}</p>
                 }
             </div>
             <div className={styles.buttonContainer}>
-                <button className={styles.uploadButton} onClick={uploadFiles}>
+                <button className={styles.uploadButton} onClick={() => uploadFiles(setDropboxText)}>
                     Upload
                 </button>
             </div>
