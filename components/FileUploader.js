@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { createClient } from '@supabase/supabase-js'
 import styles from './styles/FileUploader.module.css'
 import { useToasts } from 'react-toast-notifications'
 import { uploadData } from '../lib/supabaseUtilities'

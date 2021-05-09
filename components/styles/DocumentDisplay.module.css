@@ -1,4 +1,6 @@
 .mainContainer {
+    display: flex;
     color: palegreen;
-    background-color: blueviolet
+    background-color: blueviolet;
+    padding: 3vh;
 }
