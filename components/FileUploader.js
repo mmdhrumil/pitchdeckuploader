@@ -3,6 +3,7 @@ import { useDropzone } from 'react-dropzone'
 import { createClient } from '@supabase/supabase-js'
 import styles from './styles/FileUploader.module.css'
 import { useToasts } from 'react-toast-notifications'
+import { uploadData } from '../lib/supabaseUtilities'
 
 var fileObject = null;
 var toastObject = null;
@@ -22,39 +23,9 @@ function showToast(type, msg) {
     }
 }
 
-async function connectSupabase(){
-    const supabase = await createClient(process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
-    return supabase
-}
-
-async function uploadData(acceptedFiles){ 
-    const supabaseInstance = await connectSupabase()
-    
-    acceptedFiles.forEach((file) => {
-        const fileReader = new FileReader()
-        const filename = file.path
-
-        fileReader.onabort = () => console.log('file reading was aborted')
-        fileReader.onerror = () => console.log('file reading has failed')
-        fileReader.onload = async () => {
-            const binaryFile = fileReader.result
-            const fileBlob = new Blob([binaryFile], { type: file.type})
-            const { data, error } = await supabaseInstance.storage.from(process.env.NEXT_PUBLIC_SUPABASE_UPLOADED_FILES_BUCKET_NAME).upload('queue/' + filename, fileBlob)
-            if(data){
-                showToast("success", "Files uploaded successfully.")
-            }
-            else{
-                showToast("error", "Error in uploading files.")
-            }
-        }
-
-        fileReader.readAsArrayBuffer(file)
-    })
-}
-
 async function uploadFiles(setDropboxText) {
     if (fileObject !== null) {
-        await uploadData(fileObject)
+        await uploadData(fileObject[0], showToast)
         fileObject = null;
         setDropboxText("Drag and drop your pitch deck here or click to select files.")
     }
@@ -78,7 +49,7 @@ const FileUploader = ({ Component, pageProps }) => {
         setFileObject(acceptedFiles, setDropboxText)
     }, [])
 
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: false })
 
 
     return (
