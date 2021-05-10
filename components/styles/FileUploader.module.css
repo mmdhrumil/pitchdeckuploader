@@ -5,7 +5,28 @@
 
 .dropperContainer{
     background-color: #262626;
-    color: #F3F3F3;
+    color: #BDBDBD;
+    box-shadow: 
+        #262626 0px 0px 3px 3px,
+        #000000 2px 2px 8px,
+        #4d4d4d -2px -2px 8px;
+    width: 75vw;
+    font-size: max(3vh, 20px);
+    height: max(10vh, 100px);
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Oxygen';
+    border-radius: 4px;
+    margin-top: 3vh;
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.dropperContainer:hover{
+    background-color: #262626;
+    color: #BDBDBD;
     box-shadow: 
         #262626 0px 0px 3px 3px,
         #000000 4px 4px 8px,
@@ -38,9 +59,26 @@
     background-color: #262626;
     box-shadow: 
         #262626 0px 0px 3px 3px,
+        #4d4d4d -2px -2px 8px,
+        #000000 2px 2px 8px;
+    color: #BDBDBD;
+    font-family: 'Oxygen';
+    border: none;
+    border-radius: 1vh;
+    height: max(6vh, 40px);
+    width: 10vw;
+    font-size: max(2vh, 18px);
+    transition: 0.2s all;
+}
+
+.uploadButton:hover{
+    margin: auto;
+    background-color: #262626;
+    box-shadow: 
+        #262626 0px 0px 3px 3px,
         #4d4d4d -4px -4px 8px,
         #000000 4px 4px 8px;
-    color: #F3F3F3;
+    color: #BDBDBD;
     font-family: 'Oxygen';
     border: none;
     border-radius: 1vh;
@@ -53,7 +91,7 @@
 .uploadButton:active{
     margin: auto;
     background-color: #262626;
-    color: #F3F3F3;
+    color: #BDBDBD;
     box-shadow: none;
     font-family: 'Oxygen';
     border: none;
