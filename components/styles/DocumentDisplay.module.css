@@ -1,6 +1,6 @@
 .mainContainer {
     display: flex;
-    color: palegreen;
+    color: #BDBDBD;
     flex-wrap: wrap;
     background-color: #262626;
     padding: 5vh;

@@ -8,18 +8,17 @@ import styles from './styles/DocumentDisplay.module.css';
 
 
 const DocumentDisplay = (props) => {
-
     return (
         <>
             <div className = { styles.mainContainer }>
                 {
-                    props.data ?
+                    props.data.status !== 502 ?
                         props.data.map((row, i) => 
                                 <DocumentThumbnail key = {row.id}  data = {row} />
                             )
                         :
                             <div>
-                                <p>The database server is down. Please try refreshing the page.</p>
+                                <p>Lost connection with the database. Please try refreshing the page.</p>
                             </div>
                     
                 }
