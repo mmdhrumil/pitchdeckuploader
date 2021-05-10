@@ -9,7 +9,7 @@ const DocumentThumbnail = (props) => {
             <a href="#">
                 <div className = {styles.thumbnailImage}>{name[0].toUpperCase()}</div>
                 <div className = {styles.thumbnailText}>
-                <p>{props.data.name.slice(0,30)}</p>
+                <p>{props.data.name.slice(0,25)}</p>
             </div>
             </a>
         </div>

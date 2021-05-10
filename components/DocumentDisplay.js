@@ -13,13 +13,15 @@ const DocumentDisplay = (props) => {
         <>
             <div className = { styles.mainContainer }>
                 {
-                    props.data ? 
-                    props.data.map((row, i) => 
-                        <DocumentThumbnail key = {row.id}  data = {row} />
-                    )   :
-                    <div>
-                        <p>The database server is down. Please try refreshing the page.</p>
-                    </div>
+                    props.data ?
+                        props.data.map((row, i) => 
+                                <DocumentThumbnail key = {row.id}  data = {row} />
+                            )
+                        :
+                            <div>
+                                <p>The database server is down. Please try refreshing the page.</p>
+                            </div>
+                    
                 }
             </div>
         </>
