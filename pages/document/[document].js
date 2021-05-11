@@ -3,8 +3,7 @@ import { useRouter } from 'next/router';
 import ViewSDKClient from '../../lib/ViewSDKClient';
 import styles from '../../styles/document.module.css'
 import { downloadFile } from '../../lib/supabaseUtilities';
-import { route } from 'next/dist/next-server/server/router';
-
+import Link from 'next/link';
 
 async function downloadWrapper(filename) {
     const res = await downloadFile(filename);
@@ -61,6 +60,9 @@ const Document = () => {
                 isPDFRendered ? 
                 <div>
                     <div className = {styles.topBar}>
+                        <Link href={"/"} as={"/"}>
+                            <a className = {styles.backToHomeText}>Back</a>
+                        </Link>
                     </div>
                     <div className = {styles.inLineContainer}>
                         <div id="pdf-div" className = "inLineDiv"></div>

@@ -11,8 +11,15 @@
 }
 
 .topBar {
-    height: 5vh;
+    height: 3vh;
     background-color: #262626;
+    margin-left: 2vw;
+    padding: 1vh;
+}
+
+.backToHomeText {
+  color: #BDBDBD;
+  font-size: max(2vh, 10px);
 }
 
 @keyframes spin {
