@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import ViewSDKClient from '../../lib/ViewSDKClient';
 import styles from '../../styles/document.module.css'
 import { downloadFile } from '../../lib/supabaseUtilities';
+import { toPdfWrapper } from '../../lib/util';
 import Link from 'next/link';
 
 async function downloadWrapper(filename) {
@@ -19,16 +20,13 @@ const Document = () => {
 
         const {document} = router.query;
 
-        const fileBlob = await downloadWrapper(document);
-        if(fileBlob) {
-            console.log("Successfully downloaded")
-            console.log(fileBlob.data)
-        }
+        console.log("calling api");
 
+        const fileBlob = await downloadWrapper(document);
+
+        await toPdfWrapper(fileBlob.data);
         const viewClientSDK = new ViewSDKClient();
         const a = await viewClientSDK.ready();
-        console.log("a" + a)
-        console.log("ready passed")
         viewClientSDK.previewFile("pdf-div", fileBlob.data, document, "123", {
             embedMode: "FULL_WINDOW",
             showDownloadPDF: false,
