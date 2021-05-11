@@ -36,6 +36,9 @@ const Document = () => {
             showLeftHandPanel: false,
             showAnnotationTools: false
         });
+
+        setIsPDFRendered(true);
+
     }
 
     useEffect(() => {
@@ -43,7 +46,6 @@ const Document = () => {
             return;
         }
         downloadAndRenderPDF();
-        setIsPDFRendered(true);
       }, [router.isReady])
 
     const loadingComponent = (
@@ -56,24 +58,23 @@ const Document = () => {
 
     return (
         <div>
-            {
+            <div className = {styles.topBar}>
+                <Link href={"/"} as={"/"}>
+                    <a className = {styles.backToHomeText}>Back</a>
+                </Link>
+            </div>
+            { 
                 isPDFRendered ? 
-                <div>
-                    <div className = {styles.topBar}>
-                        <Link href={"/"} as={"/"}>
-                            <a className = {styles.backToHomeText}>Back</a>
-                        </Link>
+                    <>
+                    </>
+                : 
+                    <div className = {styles.loadingComponentContainer}>
+                        {loadingComponent}
                     </div>
-                    <div className = {styles.inLineContainer}>
-                        <div id="pdf-div" className = "inLineDiv"></div>
-                    </div>
-                </div>
-                :
-                <div className = {styles.loadingComponentContainer}>
-                    {loadingComponent}
-                </div>
-            
             }
+            <div className = {styles.inLineContainer}>
+                <div id="pdf-div" className = "inLineDiv"></div>
+            </div>
         </div>
     );
 }
