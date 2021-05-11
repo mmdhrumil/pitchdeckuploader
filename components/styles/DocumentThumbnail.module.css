@@ -24,6 +24,19 @@
         #4d4d4d -4px -4px 8px;
 }
 
+.thumbnailContainer:hover{
+    width: 15%;
+    height: 20vh;
+    background-color: #262626;
+    color: #BDBDBD;
+    margin: 3vh;
+    text-align: center;
+    box-shadow: 
+        #262626 0px 0px 3px 3px,
+        #000000 6px 6px 8px,
+        #4d4d4d -6px -6px 8px;
+}
+
 .thumbnailImage{
     background-color: #262626;
     color: #BDBDBD;

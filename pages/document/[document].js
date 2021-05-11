@@ -24,7 +24,6 @@ const Document = () => {
 
         const fileBlob = await downloadWrapper(document);
 
-        await toPdfWrapper(fileBlob.data);
         const viewClientSDK = new ViewSDKClient();
         const a = await viewClientSDK.ready();
         viewClientSDK.previewFile("pdf-div", fileBlob.data, document, "123", {
