@@ -2,14 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import ViewSDKClient from '../../lib/ViewSDKClient';
 import styles from '../../styles/document.module.css'
-import { downloadFile } from '../../lib/supabaseUtilities';
-import { toPdfWrapper } from '../../lib/util';
+import { downloadAsPDFWrapper } from '../../lib/util';
 import Link from 'next/link';
 
-async function downloadWrapper(filename) {
-    const res = await downloadFile(filename);
-    return res
-}
+
 
 const Document = () => {
     
@@ -20,19 +16,19 @@ const Document = () => {
 
         const {document} = router.query;
 
-        console.log("calling api");
+        const response = await downloadAsPDFWrapper(document);
 
-        const fileBlob = await downloadWrapper(document);
-
-        const viewClientSDK = new ViewSDKClient();
-        const a = await viewClientSDK.ready();
-        viewClientSDK.previewFile("pdf-div", fileBlob.data, document, "123", {
-            embedMode: "FULL_WINDOW",
-            showDownloadPDF: false,
-            showPrintPDF: false,
-            showLeftHandPanel: false,
-            showAnnotationTools: false
-        });
+        if(response) {
+            const viewClientSDK = new ViewSDKClient();
+            const a = await viewClientSDK.ready();
+            viewClientSDK.previewFile("pdf-div",response.data, document, "123", {
+                embedMode: "FULL_WINDOW",
+                showDownloadPDF: false,
+                showPrintPDF: false,
+                showLeftHandPanel: false,
+                showAnnotationTools: false
+            });
+        }
 
         setIsPDFRendered(true);
 
