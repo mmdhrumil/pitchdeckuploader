@@ -7,7 +7,12 @@ PitchDeckUploader is a web application for entrepreneurs to store their startup'
 ![PitchDeckUploader Demo](demo/demo.gif)
 
 ## Instructions to run locally
-  
+
+### Clone the project
+
+``` bash
+git clone https://github.com/mdhrumil/pitchdeckuploader.git
+```
 
 ### Software dependencies
 
