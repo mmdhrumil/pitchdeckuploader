@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import ViewSDKClient from '../../lib/ViewSDKClient';
 import styles from '../../styles/document.module.css'
-import { downloadAsPDFWrapper } from '../../lib/util';
+import { downloadWrapper } from '../../lib/supabaseUtilities';
 import Link from 'next/link';
 
 
@@ -16,7 +16,7 @@ const Document = () => {
 
         const {document} = router.query;
 
-        const response = await downloadAsPDFWrapper(document);
+        const response = await downloadWrapper(document);
 
         if(response) {
             const viewClientSDK = new ViewSDKClient();

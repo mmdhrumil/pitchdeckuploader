@@ -149,6 +149,14 @@
   }
   
 
+  .slownoteText {
+    background-color: #262626;
+    color: #BDBDBD;
+    font-family: 'Oxygen';
+    font-size: max(1.7vh, 15px);
+    margin-top: -1vh;
+  }
+
   /* Check mark CSS */
 
   .checkmarkCircle {

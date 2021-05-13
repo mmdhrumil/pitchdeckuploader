@@ -84,6 +84,7 @@ const FileUploader = ({ Component, pageProps }) => {
                                     :
                                         <div>
                                             {loadingComponent}
+                                            <p className = {styles.slownoteText}>If you uploaded a PPT/PPTX file, it might take a little longer than expected.</p>
                                         </div>
                             }
                         </div>
