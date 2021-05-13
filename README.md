@@ -44,13 +44,13 @@ npm run start
 
 ## Technology stack
 
-**NextJS** - https://nextjs.org/
-**Supabase** - https://supabase.io/
-**Adobe PDF Embed API** - https://www.adobe.io/apis/documentcloud/dcsdk/pdf-embed.html
-**Libreoffice** - https://www.libreoffice.org/
-**Open source packages and libraries** - 
-- https://www.npmjs.com/package/libreoffice-convert
-- https://github.com/axios/axios
-- https://www.npmjs.com/package/react-dropzone
-- https://github.com/jossmac/react-toast-notifications
+- **NextJS** - https://nextjs.org/
+- **Supabase** - https://supabase.io/
+- **Adobe PDF Embed API** - https://www.adobe.io/apis/documentcloud/dcsdk/pdf-embed.html
+- **Libreoffice** - https://www.libreoffice.org/
+- **Open source packages and libraries** - 
+- - https://www.npmjs.com/package/libreoffice-convert
+- - https://github.com/axios/axios
+- - https://www.npmjs.com/package/react-dropzone
+- - https://github.com/jossmac/react-toast-notifications
 
