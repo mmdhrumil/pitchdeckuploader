@@ -14,3 +14,16 @@
     margin-top: 1vh;
     margin-left: 1vw;
 }
+
+.noUploadTextContainer {
+    text-align: center;
+}
+
+.noUploadText {
+    background-color: #262626;
+    color: #BDBDBD;
+    font-family: 'Oxygen';
+    font-size: max(3vh, 10px);
+    margin: auto;
+    margin-top: 6vh;
+}
