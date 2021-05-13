@@ -4,7 +4,6 @@ import fs from 'fs';
 
 export default async (req, res) => {
     const filename = req.body.filename
-    console.log("in backend filename " + filename)
     const outputPath = "cache/" + filename + ".pdf"
 
     const downloadedResponse = await downloadWrapper(filename);

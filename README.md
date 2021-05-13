@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PitchDeckUploader
 
-## Getting Started
+PitchDeckUploader is a web application for entrepreneurs to store their startup's pitch deck and maintain it's version history.
 
-First, run the development server:
+## Demo
 
-```bash
+![PitchDeckUploader Demo](demo/demo.gif)
+
+## Instructions to run locally
+  
+
+### Software dependencies
+
+- Node JS
+- LibreOffice installed on your local machine. Please install it [here](https://www.libreoffice.org/download/download/). (LibreOffice is required to enable uploading files in PPTX/PPT formats.)
+- Browser
+
+### NodeJS dependencies
+
+Install all the NodeJS dependencies
+``` bash
+npm install
+```
+
+### Run in development mode
+
+``` bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Run in production mode
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Build the project
+``` bash
+npm run build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Run the production build
+``` bash
+npm run start
+```
 
-## Learn More
+## Technology stack
 
-To learn more about Next.js, take a look at the following resources:
+**NextJS** - https://nextjs.org/
+**Supabase** - https://supabase.io/
+**Adobe PDF Embed API** - https://www.adobe.io/apis/documentcloud/dcsdk/pdf-embed.html
+**Libreoffice** - https://www.libreoffice.org/
+**Open source packages and libraries** - 
+- https://www.npmjs.com/package/libreoffice-convert
+- https://github.com/axios/axios
+- https://www.npmjs.com/package/react-dropzone
+- https://github.com/jossmac/react-toast-notifications
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
