@@ -5,3 +5,12 @@
     background-color: #262626;
     padding: 5vh;
 }
+
+.versionHistoryText {
+    background-color: #262626;
+    color: #BDBDBD;
+    font-family: 'Oxygen';
+    font-size: max(1.5vh, 10px);
+    margin-top: 1vh;
+    margin-left: 1vw;
+}

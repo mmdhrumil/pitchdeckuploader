@@ -10,6 +10,9 @@ import styles from './styles/DocumentDisplay.module.css';
 const DocumentDisplay = (props) => {
     return (
         <>
+            <div className = {styles.versionHistoryText }>
+                <p>Uploads version history</p>
+            </div>
             <div className = { styles.mainContainer }>
                 {
                     props.data.status !== 502 ?
